@@ -6,9 +6,7 @@ router.get("/all", async (req,res)=>{
     
     const blogs = await Blog.find({});
 
-    console.log(blogs)
-
-    res.status(200).json({blogs: blogs});
+    res.status(200).json(blogs);
 })
 
 router.post("/add", async (req,res)=>{
