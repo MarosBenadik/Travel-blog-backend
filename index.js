@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 
 const blogRoute = require('./routes/blogRoute');
 const contactRoute = require('./routes/contactUs');
+const questionRoute = require('./routes/question');
+const answerRoute = require('./routes/answers');
 
 const port = process.env.PORT || 8800;
 
@@ -24,6 +26,8 @@ app.use(express.json());
 
 app.use("/blogs", blogRoute);
 app.use("/contuct-us", contactRoute);
+app.use("/questions", questionRoute);
+app.use("/answers", answerRoute);
 
 app.listen(port, () => {
     console.log(`App listening at ${ip.address()}:${port}`);

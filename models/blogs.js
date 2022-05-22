@@ -8,8 +8,12 @@ const BlogSchema = new mongoose.Schema({
     },
     category:{
         type:Number,
-        required:true,
-        
+        required:true,  
+    },
+    slug: {
+        type: String,
+        required: true,
+        unique: true
     },
     likes:{
         type: Number,
@@ -19,23 +23,52 @@ const BlogSchema = new mongoose.Schema({
         type:Number,
         required: true,
     },
+    cleverQoute:{
+        type:String
+    },
     subTitle:{
         type:String,
         required: true,
         max: 350
     },
+    country:{
+        type:Number,
+        required:true
+    },
     partOne:{
         type:String,
-        max: 3000
+        max: 6000
     },
     partTwo:{
         type:String,
-        max: 3000
+        max: 6000
     },
     partThree:{
         type:String,
-        max: 3000
-    }
+        max: 6000
+    },
+    partFour:{
+        type:String,
+        max: 6000
+    },
+    mainImg:{
+        type:String,
+    },
+    blogImg:{
+        type:String,
+    },
+    img:{
+        type:String,
+    },
+    img1:{
+        type:String,
+    },
+    img2:{
+        type:String,
+    },
+    img3:{
+        type:String,
+    },
 },
 {timestamps:true}
 )
