@@ -5,6 +5,8 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 const cors = require('cors')
 
+const bodyParser = require('body-parser')
+
 const blogRoute = require('./routes/blogRoute');
 const contactRoute = require('./routes/contactUs');
 const questionRoute = require('./routes/question');
@@ -30,7 +32,8 @@ mongoose.connect(process.env.DB, {useNewUrlParser: true},()=>{
     console.log("Connected to MongoDB")
 });
 
-app.use(express.json());
+app.use(bodyParser.json({limit: '60mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 
 app.use("/blogs", blogRoute);

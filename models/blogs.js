@@ -69,6 +69,10 @@ const BlogSchema = new mongoose.Schema({
     img3:{
         type:String,
     },
+    author:{
+        type:String,
+        default: "Tatiana"
+    }
 },
 {timestamps:true}
 )
