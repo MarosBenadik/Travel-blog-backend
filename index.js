@@ -3,11 +3,13 @@ const app = express();
 var ip = require('ip');
 require('dotenv').config();
 const mongoose = require("mongoose");
+const cors = require('cors')
 
 const blogRoute = require('./routes/blogRoute');
 const contactRoute = require('./routes/contactUs');
 const questionRoute = require('./routes/question');
 const answerRoute = require('./routes/answers');
+const userRoute = require('./routes/userRoute');
 
 const port = process.env.PORT || 8800;
 
@@ -16,6 +18,13 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true,
+
+}
+app.use(cors(corsOptions));
 
 mongoose.connect(process.env.DB, {useNewUrlParser: true},()=>{
     console.log("Connected to MongoDB")
@@ -28,6 +37,7 @@ app.use("/blogs", blogRoute);
 app.use("/contuct-us", contactRoute);
 app.use("/questions", questionRoute);
 app.use("/answers", answerRoute);
+app.use("/user", userRoute);
 
 app.listen(port, () => {
     console.log(`App listening at ${ip.address()}:${port}`);
