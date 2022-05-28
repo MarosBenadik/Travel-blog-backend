@@ -12,6 +12,7 @@ const contactRoute = require('./routes/contactUs');
 const questionRoute = require('./routes/question');
 const answerRoute = require('./routes/answers');
 const userRoute = require('./routes/userRoute');
+const journyRoute = require('./routes/ourJourny');
 
 const port = process.env.PORT || 8800;
 
@@ -41,6 +42,7 @@ app.use("/contuct-us", contactRoute);
 app.use("/questions", questionRoute);
 app.use("/answers", answerRoute);
 app.use("/user", userRoute);
+app.use("/journy", journyRoute);
 
 app.listen(port, () => {
     console.log(`App listening at ${ip.address()}:${port}`);

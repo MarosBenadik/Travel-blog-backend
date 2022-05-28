@@ -3,7 +3,6 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const dotenv = require('dotenv');
-const { response } = require("express");
 
 
 function generateAccessToken(id, username) {
@@ -11,7 +10,7 @@ function generateAccessToken(id, username) {
 }
 
 function generateRefreshToken(id, username) {
-    return jwt.sign({ id, username }, process.env.JWT_SEC, { expiresIn: '86400'});
+    return jwt.sign({ id, username }, process.env.JWT_SEC, { expiresIn: '1800m'});
 }
 
 //Login
