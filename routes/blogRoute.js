@@ -103,12 +103,12 @@ router.post("/add", async (req,res) =>{
         partTwo: req.body.partTwo,
         partThree: req.body.partThree,
         partFour: req.body.partFour,
-        mainImg: mainImg.public_id,
-        blogImg: blogImg.public_id,
-        img: img.public_id,
-        img1: img1.public_id,
-        img2: img2.public_id,
-        img3: img3.public_id,
+        mainImg: mainImg.url,
+        blogImg: blogImg.url,
+        img: img.url,
+        img1: img1.url,
+        img2: img2.url,
+        img3: img3.url,
     });
 
     console.log(newBlog);
