@@ -8,7 +8,7 @@ const blogRoute = require('./routes/blogRoute.js');
 const contactRoute = require('./routes/contactUs');
 const questionRoute = require('./routes/question.js');
 const answerRoute = require('./routes/answers.js');
-const userRoute = require('./routes/userRoute.js');
+//const userRoute = require('./routes/userRoute.js');
 const journyRoute = require('./routes/ourJourny.js');
 
 const port = process.env.PORT || 8800;
@@ -42,7 +42,7 @@ app.use("/blogs", blogRoute);
 app.use("/contuct-us", contactRoute);
 app.use("/questions", questionRoute);
 app.use("/answers", answerRoute);
-app.use("/user", userRoute);
+//app.use("/user", userRoute);
 app.use("/journy", journyRoute);
 
 app.get("/", async (req, res) => {
