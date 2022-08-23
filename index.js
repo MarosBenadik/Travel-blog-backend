@@ -4,9 +4,6 @@ var ip = require('ip');
 require('dotenv').config();
 const mongoose = require("mongoose");
 const cors = require('cors')
-
-const bodyParser = require('body-parser')
-
 const blogRoute = require('./routes/blogRoute');
 const contactRoute = require('./routes/contactUs');
 const questionRoute = require('./routes/question');
@@ -16,18 +13,22 @@ const journyRoute = require('./routes/ourJourny');
 
 const port = process.env.PORT || 8800;
 
-app.use(function(req, res, next) {
-    //res.header("Access-Control-Allow-Origin", "http://localhost:3000"); 
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+const bodyParser = require('body-parser')
 
-const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
+//app.use(function(req, res, next) {
+//    //res.header("Access-Control-Allow-Origin", "http://localhost:3000"); 
+//    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//    next();
+//});
 
-}
-app.use(cors(corsOptions));
+//const corsOptions = {
+    //origin: 'http://localhost:3000',
+    //credentials: true,
+
+//}
+// Put corsOptions int ()
+
+app.use(cors());
 
 mongoose.connect(process.env.DB, {useNewUrlParser: true},()=>{
     console.log("Connected to MongoDB")
