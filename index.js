@@ -44,6 +44,10 @@ app.use("/answers", answerRoute);
 app.use("/user", userRoute);
 app.use("/journy", journyRoute);
 
+app.get("/", async (req, res) => {
+    res.status(200).send('<h1 style=" margin: auto; width: 50%; height: 50%; border: 3px solid green; padding: 50px; text-align: center;">Travel Blog Server is running</h1>');
+})
+
 app.listen(port, () => {
     console.log(`App listening at ${ip.address()}:${port}`);
 });
