@@ -4,12 +4,12 @@ var ip = require('ip');
 require('dotenv').config();
 const mongoose = require("mongoose");
 const cors = require('cors')
-const blogRoute = require('./routes/blogRoute');
+const blogRoute = require('./routes/blogRoute.js');
 const contactRoute = require('./routes/contactUs');
-const questionRoute = require('./routes/question');
-const answerRoute = require('./routes/answers');
-const userRoute = require('./routes/userRoute');
-const journyRoute = require('./routes/ourJourny');
+const questionRoute = require('./routes/question.js');
+const answerRoute = require('./routes/answers.js');
+const userRoute = require('./routes/userRoute.js');
+const journyRoute = require('./routes/ourJourny.js');
 
 const port = process.env.PORT || 8800;
 
